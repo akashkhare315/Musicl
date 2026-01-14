@@ -96,5 +96,10 @@ async function register(req, res) {
   }
 }
 
-module.exports = { register };
+async function googleAuthcallback(req, res) {
+  const user = req.user;
+  console.log(user);
+  res.send("Google authentication successful");
+}
 
+module.exports = { register, googleAuthcallback };
